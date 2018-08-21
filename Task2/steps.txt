@@ -1,0 +1,17 @@
+Create 2 or more EC2 instances.
+
+On each EC2 instance run a web application, which was copied from local machine to the remote machine (steps of which are given in t2.sh).
+
+Create a simple Application Load by choosing Load Balancer from the navigation panel on the EC2 console.
+//My Load Balancer name is "myFirstLB"
+
+  Configure the Load Balancer(LB), by giving the name for the load balancer and selecting the Availability Zone(AZ) of the VPC that is used in EC2
+  instances.
+  
+  Configure the Security Group(SG), it's better to create a new SG for your LB
+  
+  Next configure the Target Group(TG), create a new TG. Then, add targets and register them with your TG.
+  
+  Review the process. 
+  And create the LB.
+ 
