@@ -1,0 +1,34 @@
+{
+  "Id": "Policy1534836853773",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1534836134304",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::unencrypt-bucket",
+      "Condition": {
+        "StringNotEquals": {
+          "s3:x-amz-server-side-encryption": "aws:kms"
+        }
+      },
+      "Principal": "*"
+    },
+    {
+      "Sid": "Stmt1534836845114",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::unencrypt-bucket",
+      "Condition": {
+        "Null": {
+          "s3:x-amz-server-side-encryption": "true"
+        }
+      },
+      "Principal": "*"
+    }
+  ]
+}
