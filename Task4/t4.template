@@ -30,9 +30,9 @@ Resources:
   EC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      ImageId: ami-0fbdeb8e7d04152
+      ImageId: ami-00fbdeeb8e7d04152
       InstanceType: t2.micro
-      KeyName: newtestkey
+      KeyName: nkp
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 3f5012a9-2504-4bd6-a032-a40bd4620dd6
