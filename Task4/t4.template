@@ -1,0 +1,52 @@
+Metadata:
+  'AWS::CloudFormation::Designer':
+    3f5012a9-2504-4bd6-a032-a40bd4620dd6:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 275
+        'y': 110
+      z: 0
+      embeds: []
+      dependson:
+        - 5fc89527-1758-45b3-846c-b0e5e106b896
+    5fc89527-1758-45b3-846c-b0e5e106b896:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 375
+        'y': 80
+      z: 0
+      embeds: []
+    c99a7d55-bd4c-4abe-9588-7a1b6591016e:
+      source:
+        id: 3f5012a9-2504-4bd6-a032-a40bd4620dd6
+      target:
+        id: 5fc89527-1758-45b3-846c-b0e5e106b896
+      z: 1
+Resources:
+  EC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: ami-0fbdeb8e7d04152
+      InstanceType: t2.micro
+      KeyName: newtestkey
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 3f5012a9-2504-4bd6-a032-a40bd4620dd6
+    DependsOn:
+      - EC2SecurityGroup
+  EC2SecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Allow particular port ot start Tomcat
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 5fc89527-1758-45b3-846c-b0e5e106b896
